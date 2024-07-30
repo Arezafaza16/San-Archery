@@ -74,7 +74,7 @@ const BuyProduct = ({ searchTerm, addToCart }) => {
             <div className=' justify-center gap-8 w-full flex md:flex-row flex-row flex-wrap my-10'>
                 {products.map((list, index) => (
                     <div key={index} className='border cursor-pointer hover:bg-zinc-700 w-[400px] md:w-[560px] p-4 flex justify-center'>
-                        <div className='flex flex-col w-[600px] '>
+                        <div className='flex flex-col md:w-[600px] '>
                             <div className='flex flex-row mx-auto my-4'>
                                 <div
                                     className='w-20 h-20 border border-white p-[12px] rounded-full'

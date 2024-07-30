@@ -214,36 +214,33 @@ const NavBar = ({ setSearchTerm, searchTerm }) => {
 
     return (
         <>
-            <div className={`flex w-full justify-between md:justify-evenly items-center h-16 md:h-28 bg-black sticky top-0 p-4 z-50 ${isScrolled ? 'opacity-80' : 'opacity-100'}`}>
-
-                <div className='h-full ml-10 mt-5 font-bold italic'>
-                    <h2 className="md:text-5xl text-white flex flex-row">
-                        San <span className='text-[#bf8347] ml-2'>Archery</span>
-                    </h2>
-                </div>
-                <div className=' w-full px-10 h-full'>
-                    <ul className={`lg:flex gap-3 h-6 justify-center text-xl text-white ${click ? 'flex flex-col absolute top-60 left-0 w-full bg-black p-4' : 'hidden'}`}>
-                        <li className='navlink w-full md:-top-[30px] my-14 lg:w-36 h-6 hover:text-[#bf8347]' onClick={() => scrollToSection('home')}>Home</li>
-                        <li className='navlink w-full md:-top-[30px] my-14 lg:w-36 h-6 hover:text-[#bf8347]' onClick={() => scrollToSection('about')}>About Us</li>
-                        <li className='navlink w-full md:-top-[30px] my-14 lg:w-40 h-6 hover:text-[#bf8347]' onClick={() => scrollToSection('products')}>Buy Products</li>
-                        <li className='navlink w-full md:-top-[30px] my-14 lg:w-40 h-6 hover:text-[#bf8347]' onClick={() => scrollToSection('contact')}>Contact Us</li>
+            <div className={`flex w-full justify-between md:justify-evenly items-center h-16 md:h-28 bg-black top-0 p-4 z-50 ${isScrolled ? 'opacity-80' : 'opacity-100'}`}>
+                <div className=' w-full md:px-20 flex pt-2 justify-evenly md:justify-between'>
+                    <div className='h-full lg:mt-4 font-bold italic'>
+                        <h2 className="md:text-5xl text-white flex flex-row">
+                            San <span className='text-[#bf8347] ml-2'>Archery</span>
+                        </h2>
+                    </div>
+                    <ul className={`lg:flex gap-3 lg:mt-4 justify-center text-xl text-white bg-black  ${click ? 'flex flex-col absolute w-full p-4' : 'hidden'}`}>
+                        <li className='navlink w-full my-2 lg:w-36 h-10 hover:text-[#bf8347]' onClick={() => scrollToSection('home')}>Home</li>
+                        <li className='navlink w-full my-2 lg:w-36 h-10 hover:text-[#bf8347]' onClick={() => scrollToSection('about')}>About Us</li>
+                        <li className='navlink w-full my-2 lg:w-40 h-10 hover:text-[#bf8347]' onClick={() => scrollToSection('products')}>Buy Products</li>
+                        <li className='navlink w-full my-2 lg:w-40 h-10 hover:text-[#bf8347]' onClick={() => scrollToSection('contact')}>Contact Us</li>
                     </ul>
 
-                    <div className='h-full flex items-center justify-end lg:bottom-[20px] gap-3 md:text-2xl cursor-pointer relative'>
+                    <div className='h-full lg:mt-7 flex justify-center items-center gap-3 text-2xl md:text-4xl cursor-pointer relative'>
                         <FiSearch
                             className={!isSearch ? 'text-white hover:text-[#bf8347]' : 'text-[#bf8347]'}
-                            size={34}
                             onClick={handleSearchClick}
                         />
                         <div onClick={handleCartClick} className="relative">
                             <div className='dot-notification absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full text-white flex items-center justify-center text-sm'>{ordered.length}</div>
                             <FiShoppingCart
                                 className={!clickCart ? 'text-white hover:text-[#bf8347]' : 'text-[#bf8347]'}
-                                size={34}
                             />
                         </div>
                         <div onClick={() => setClick(!click)} className="lg:hidden opacity-95 sticky w-20 md:w-10 flex items-center justify-end">
-                            <div className={`flex flex-col gap-2 ${click ? 'absolute top-2 md:top-6' : 'top-0 md:top-6'}`}>
+                            <div className={`flex flex-col gap-2 ${click ? 'absolute' : 'top-0 md:top-6'}`}>
                                 <div className={`${click && 'rotate-45 duration-300'} menubar w-6`}></div>
                                 <div className={`${click && 'hidden'} menubar w-9`}></div>
                                 <div className={`${click && '-rotate-45 duration-300'} menubar w-6`}></div>

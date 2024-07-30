@@ -30,7 +30,7 @@ const AboutUs = () => {
                 </span>
             </h2>
             <div className=' w-full flex flex-col lg:flex-row gap-10 items-center lg:gap-16 p-4'>
-                <div ref={sectionRef} className=' w-[400px] md:w-[800px] p-3 lg:mr-auto lg:mb-[500px] hiddenAbout'>
+                <div ref={sectionRef} className=' w-[400px] px-10 md:w-[800px] p-3 lg:mr-auto lg:mb-[500px] hiddenAbout'>
                     <h2 className=' text-4xl mb-5 text-white font-bold'>Kenapa Memilih Product Kami?</h2>
                     <p className=" text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
                     <p className=" text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
