@@ -3,7 +3,7 @@ import midtransClient from 'midtrans-client';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { saveOrder } from './src/appwrite/api.js';
+import { Client, Databases, ID } from 'appwrite';
 dotenv.config();
 
 const app = express();
@@ -46,6 +46,61 @@ app.post('/create-transaction', async (req, res) => {
             name: item.product
         }))
     };
+    const client = new Client();
+
+    client
+        .setEndpoint(process.env.VITE_ENDPOINT)
+        .setProject(process.env.VITE_PROJECT_ID);
+
+
+    const databases = new Databases(client)
+
+    async function saveOrder(customerData, cartItems) {
+        try {
+            console.log('Saving order with customerData:', customerData);
+            console.log('Saving order with cartItems:', cartItems);
+
+            // Simpan data customer
+            const customer = await databases.createDocument(
+                process.env.VITE_DATABASE_ID,
+                process.env.VITE_COLLECTION_ID_CUSTOMER,
+                ID.unique(),
+                {
+                    name: customerData.name,
+                    email: customerData.email,
+                    phoneNumber: customerData.phoneNumber,
+                    address: customerData.address,
+                    shippingOption: customerData.shippingOption
+                }
+            );
+
+
+            // Simpan data pesanan
+            for (const item of cartItems) {
+                try {
+                    const order = await databases.createDocument(
+                        process.env.VITE_DATABASE_ID,
+                        process.env.VITE_COLLECTION_ID_ORDER, // Ganti dengan ID koleksi OrderedList Anda
+                        ID.unique(),
+                        {
+                            customer: customer.$id, // Menyimpan ID customer sebagai creator
+                            product: item.product,
+                            quantity: item.quantity,
+                            totalPrice: item.totalPrice
+                        }
+                    );
+                    console.log(order, "ini ordernya");
+                } catch (orderError) {
+                    console.error('Error saving order item:', orderError);
+                }
+            }
+
+            console.log('Order saved successfully');
+        } catch (error) {
+            console.error('Error saving order:', error);
+            throw error;
+        }
+    }
 
     try {
         const transaction = await snap.createTransaction(parameter);

@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FiSearch, FiShoppingCart } from "react-icons/fi";
 import { FaTrashCan } from "react-icons/fa6";
 import rupiah from '@/utils/rupiahFormater';
-import { useSaveOrder } from '../appwrite/queriesAndMutation'; // Import hook useSaveOrder
 import Swal from 'sweetalert2';
-import Thanks from './afterPayment/Thanks';
-import { useAuth } from '@/context/AuthContext';
 
 const NavBar = ({ setSearchTerm, searchTerm }) => {
     const [isSearch, setIsSearch] = useState(false);

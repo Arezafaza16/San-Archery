@@ -76,52 +76,6 @@ export async function createComment(comment) {
     }
 }
 
-export async function saveOrder(customerData, cartItems) {
-    try {
-        console.log('Saving order with customerData:', customerData);
-        console.log('Saving order with cartItems:', cartItems);
-
-        // Simpan data customer
-        const customer = await databases.createDocument(
-            appwriteConfig.databaseId,
-            appwriteConfig.customerCollectionId,
-            ID.unique(),
-            {
-                name: customerData.name,
-                email: customerData.email,
-                phoneNumber: customerData.phoneNumber,
-                address: customerData.address,
-                shippingOption: customerData.shippingOption
-            }
-        );
-
-
-        // Simpan data pesanan
-        for (const item of cartItems) {
-            try {
-                const order = await databases.createDocument(
-                    appwriteConfig.databaseId,
-                    appwriteConfig.orderCollectionId, // Ganti dengan ID koleksi OrderedList Anda
-                    ID.unique(),
-                    {
-                        customer: customer.$id, // Menyimpan ID customer sebagai creator
-                        product: item.product,
-                        quantity: item.quantity,
-                        totalPrice: item.totalPrice
-                    }
-                );
-                console.log(order, "ini ordernya");
-            } catch (orderError) {
-                console.error('Error saving order item:', orderError);
-            }
-        }
-
-        console.log('Order saved successfully');
-    } catch (error) {
-        console.error('Error saving order:', error);
-        throw error;
-    }
-}
 
 
 export async function getAllCustomer() {
