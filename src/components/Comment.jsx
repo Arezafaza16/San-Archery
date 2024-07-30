@@ -61,7 +61,7 @@ const Comment = () => {
                             <a href='#' className='hover:text-black'>Our Product</a>
                             <a href='#' className='hover:text-black'>Contact Us</a>
                         </div>
-                        <p className=' mt-4 md:mt-7 text-xs md:text-xl'>Created by <span className='font-bold text-black'>Muhammad Arif</span> | © 2024.</p>
+                        <p className=' mt-4 md:mt-7 text-xs md:text-xl'>Created by <span className='font-bold text-black'>Moh Faza Areza</span> | © 2024.</p>
                     </div>
                 </footer>
             </div>
