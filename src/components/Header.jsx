@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import headerImage from '../assets/img/header.jpg';
 
 const Header = () => {
     return (
-        <header id='home' className='relative w-full h-screen bg-cover bg-center' style={{ backgroundImage: "url('./src/assets/img/header.jpg')" }}>
+        <header id='home' className='relative w-full h-screen bg-cover bg-center' style={{ backgroundImage: `url(${headerImage})` }}>
         </header>
     )
 }
