@@ -5,9 +5,9 @@ import formatToIDR from '@/utils/idrFormater';
 
 const ProductPackage = () => {
     const { data, isPending } = useGetAllPackage()
-    // console.log(data);
 
-    // Membagi data menjadi dua bagian
+    const url = "https://cloud.appwrite.io/v1/storage/buckets/668e772f002a1bd7095d/files/668e7757000a1bf76777/view?project=668e68b20025521cefb1&mode=admin"
+
     const firstHalf = data ? data.documents.slice(0, 4) : [];
     const secondHalf = data ? data.documents.slice(4) : [];
 
@@ -31,7 +31,7 @@ const ProductPackage = () => {
             <div className="flex flex-wrap justify-center w-full px-4 md:px-0">
                 {firstHalf.map((pack, index) => (
                     <div key={index} className="product-card p-4 m-2 rounded-lg flex flex-col items-center justify-center bg-black">
-                        <img src={pack.imageUrl} alt={pack.name} className="w-16 h-16 lg:w-72 lg:h-72 rounded-full mb-4" />
+                        <img src={url} alt={pack.name} className="w-16 h-16 lg:w-72 lg:h-72 rounded-full mb-4" />
                         <h2 className="text-lg font-bold">{pack.name}</h2>
                         <p className="text-sm">{formatToIDR(pack.price)}</p>
                     </div>

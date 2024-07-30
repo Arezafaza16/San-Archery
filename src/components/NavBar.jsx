@@ -160,7 +160,7 @@ const NavBar = ({ setSearchTerm, searchTerm }) => {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/create-transaction', {
+            const response = await fetch('https://san-archery.onrender.com/create-transaction', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
