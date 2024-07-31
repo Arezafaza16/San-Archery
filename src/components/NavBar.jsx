@@ -177,6 +177,11 @@ const NavBar = ({ setSearchTerm, searchTerm }) => {
                 // Panggil Midtrans Snap untuk menampilkan pop-up QRIS
                 window.snap.pay(token, {
                     onSuccess: async function (result) {
+                        Swal.fire({
+                            title: "Pesanan Berhasil!",
+                            text: "Terima kasih telah melakukan pemabayaran",
+                            icon: "success"
+                        });
                         localStorage.removeItem("orderedProduct")
                     },
                     onPending: function (result) {
