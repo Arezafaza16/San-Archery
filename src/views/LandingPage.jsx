@@ -10,11 +10,11 @@ import Comment from '@/components/Comment'
 const LandingPage = () => {
     const [searchTerm, setSearchTerm] = useState('')
     return (
-        <div className='w-[400px] md:w-full'>
+        <div className='w-[439px] md:w-full'>
             <div className='fixed top-0 z-50 w-full'>
                 <NavBar setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
             </div>
-            <div className='absolute bg-black top-[99%] md:top-[926px] lg:top-[900px] w-full z-30'>
+            <div className='absolute bg-black top-[99%] md:top-[926px] lg:top-[900px] md:w-full z-30'>
                 <AboutUs />
                 <ProductPackage />
                 <BuyProduct searchTerm={searchTerm} />
