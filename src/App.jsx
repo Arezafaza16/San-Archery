@@ -7,7 +7,6 @@ import ProductAdmin from "./components/admin/ProductAdmin";
 import TambahProduct from "./components/admin/TambahProduct";
 import EditProduct from "./components/admin/EditProduct";
 import SignIn from "./components/admin/sign-in";
-import Thanks from "./components/afterPayment/Thanks";
 
 function App() {
 
@@ -21,7 +20,6 @@ function App() {
         <Route path="sign-in" element={<SignIn />} />
 
         { /** private */}
-        <Route path="thanks" element={<Thanks />} />
 
         <Route path="/admin" element={<AdminLayOut />} >
           <Route path="dashboard" element={<DashBoard />} />

@@ -183,6 +183,7 @@ const NavBar = ({ setSearchTerm, searchTerm }) => {
                             icon: "success"
                         });
                         localStorage.removeItem("orderedProduct")
+                        window.location.reload()
                     },
                     onPending: function (result) {
                         console.log('Pending:', result);
