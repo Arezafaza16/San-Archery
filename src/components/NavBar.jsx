@@ -180,10 +180,12 @@ const NavBar = ({ setSearchTerm, searchTerm }) => {
                         Swal.fire({
                             title: "Pesanan Berhasil!",
                             text: "Terima kasih telah melakukan pemabayaran",
-                            icon: "success"
+                            icon: "success",
+                            confirmButtonText: 'OK'
+                        }).then(() => {
+                            localStorage.removeItem("orderedProduct");
+                            window.location.reload();
                         });
-                        localStorage.removeItem("orderedProduct")
-                        window.location.reload()
                     },
                     onPending: function (result) {
                         console.log('Pending:', result);
