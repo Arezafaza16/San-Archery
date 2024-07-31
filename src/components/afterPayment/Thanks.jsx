@@ -3,7 +3,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Thanks = () => {
-
+    const navigate = useNavigate()
 
     return (
         <div className=' text-white flex justify-center items-center h-full'>
