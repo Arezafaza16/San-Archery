@@ -83,7 +83,7 @@ export async function getAllCustomer() {
         const customers = await databases.listDocuments(
             appwriteConfig.databaseId,
             appwriteConfig.customerCollectionId,
-            [Query.orderAsc('$createdAt'), Query.limit(20)]
+            [Query.orderAsc('$createdAt')]
         );
         if (!customers) throw Error;
 
