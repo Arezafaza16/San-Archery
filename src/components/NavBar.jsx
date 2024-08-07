@@ -160,7 +160,7 @@ const NavBar = ({ setSearchTerm, searchTerm }) => {
         };
 
         try {
-            const response = await fetch('https://san-archery.onrender.com/create-transaction', {
+            const response = await fetch(`${import.meta.env.VITE_EXPRESS_API}/create-transaction`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

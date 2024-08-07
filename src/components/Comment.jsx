@@ -49,7 +49,7 @@ const Comment = () => {
             <div className='w-full bg-[#bf8347] p-8 md:p-16'>
                 <div className='flex text-white flex-row justify-center gap-4'>
                     <FiPhoneCall className='hover:text-black text-3xl md:text-[40px]' />
-                    <a href='https://www.instagram.com/muhmmadrif_/' >
+                    <a href='https://www.instagram.com/arezafaza/' >
                         <FaInstagram className='hover:text-black text-3xl md:text-[40px]' />
                     </a>
                 </div>

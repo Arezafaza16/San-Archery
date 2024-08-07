@@ -145,7 +145,6 @@ export function getFilePreview(fileId) {
             ImageGravity.Top,
             100
         );
-
         return fileUrl
     } catch (error) {
         console.log(error);
